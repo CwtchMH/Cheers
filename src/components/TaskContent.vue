@@ -39,7 +39,6 @@
         <TaskControl :tasks="tasks.unimportant.unurgent" />
       </div>
     </div>
-    ../stores/tasks
   </div>
 </template>
 
