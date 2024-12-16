@@ -22,6 +22,8 @@ const deleteTask = (index: number) => {
     tasks.splice(index, 1);
 }
 
+console.log(tasks);
+
 const editTask = (el: {isEditing: boolean}) => {
     el.isEditing = !el.isEditing;
 }

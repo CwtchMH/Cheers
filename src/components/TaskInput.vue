@@ -19,7 +19,8 @@
         <option value="not-urgent">Unurgent</option>
       </select>
     </div>
-    <button class="btn btn-danger" @click="handleAddTask">Add a new task</button>
+    <button class="btn btn-success" @click="handleAddTask">Add a new task</button>
+    <button class="btn btn-danger" @click="handleDeleteTask">Delete all tasks</button>
   </div>
 </template>
 
@@ -31,12 +32,17 @@ import { addTask } from '../composable/AddTask'
 const task = ref('')
 const priority = ref('')
 const status = ref('')
+const tasksStore = useTasksStore()
 
 const handleAddTask = () => {
   addTask(task.value, priority.value, status.value) // Truyền giá trị của task, priority, status
   task.value = '' // Reset lại các giá trị
   priority.value = ''
   status.value = ''
+}
+
+const handleDeleteTask = () => {
+  tasksStore.deleteAllTasks()
 }
 </script>
 
